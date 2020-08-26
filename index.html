@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <h2>Daily Journal</h2>
+    <form action="">
+        <fieldset>
+            <label for="journalData">Date of entry</label>
+            <input type="date">
+            <!-- <select name="" id=""></select> -->
+            <option value=""></option>
+        </fieldset>
+        <fieldset>
+            <label for="journalData">Concepts Covered</label>
+            <!-- <input type="text"> -->
+            <textarea name="concepts" id="concepts" cols="30" rows="2"></textarea>
+            <!-- <select name="" id=""></select>
+            <option value=""></option> -->
+        </fieldset>
+        <fieldset>
+            <label for="journalData">Journal Entry</label>
+            <!-- <input type="text"> -->
+            <textarea name="" id="" cols="30" rows="5"></textarea>
+            <!-- <select name="" id=""></select>
+            <option value=""></option> -->
+        </fieldset>
+        <fieldset>
+            <label for="journalData">Mood for the Day</label>
+            <!-- <input type="text"> -->
+            <!-- <textarea name="" id="" cols="30" rows="5"></textarea> -->
+            <select name="" id="">
+                <option value="happy">Happy</option>
+                <option value="sad">Sad</option>
+                <option value="confused">Confused</option>
+                <option value="lost">Completely Lost</option>
+            </select>
+            <option value="Happy"></option>
+        </fieldset>
+        <input type="submit" value="Record Entry">
+    </form>
     <div class="entryLog">
 
     </div>
-    
+
 </body>
+<footer>
+
+</footer>
 <script type="module" src="./scripts/main.js"></script>
+
 </html>
