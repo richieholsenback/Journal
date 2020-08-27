@@ -1,0 +1,23 @@
+.journal-entry-form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: content;
+    width: 500px;
+    text-align: justify;
+    background-color: rgb(255, 244, 230);
+    color: rgb(72, 73, 103);
+}
+
+.button {
+    display: flex;
+    flex-grow: initial;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: rgb(88, 103, 91);
+}
