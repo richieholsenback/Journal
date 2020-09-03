@@ -16,7 +16,7 @@ export const EntryListComponent = () => {
 
     let entryHTMLRepresentation = "";
     for (const entry of entries) {
-        entryHTMLRepresentation = JournalEntryComponent(entry)
+        entryHTMLRepresentation += JournalEntryComponent(entry)
         /*
             Invoke the component that returns an
             HTML representation of a single entry
