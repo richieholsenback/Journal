@@ -1,12 +1,3 @@
-import { useJournalEntries, getEntries} from './JournalDataProvider.js'
-import { EntryListComponent } from './JournalEntryList.js'
+import { entryList } from './Journal/JournalEntryList.js'
 
-const allTheEntries = useJournalEntries()
-
-for (const entry of allTheEntries) {
-    console.log(entry)
-}
-
-EntryListComponent();
-getEntries
-
+entryList();
