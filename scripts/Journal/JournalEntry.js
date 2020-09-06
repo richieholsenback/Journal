@@ -13,3 +13,4 @@ export const JournalEntryComponent = (entry) => {
         </section>
     `
 }
+
