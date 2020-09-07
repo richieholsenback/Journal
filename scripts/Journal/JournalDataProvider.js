@@ -1,3 +1,5 @@
+let notes = [];
+
 const eventHub = document.querySelector(".container")
 
 const dispatchStateChangeEvent = () => {
@@ -6,13 +8,17 @@ const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(noteStateChangedEvent)
 }
 
-const getNotes = () => {
+export const getNotes = () => {
     return fetch('http://localhost:8088/entries')
         .then(response => response.json())
         .then(parsedNotes => {
             notes = parsedNotes
         })
 
+}
+
+export const useNotes = () => {
+    return notes.slice()
 }
 
 export const saveNote = note => {
@@ -23,6 +29,8 @@ export const saveNote = note => {
         },
         body: JSON.stringify(note)
     })
-    .then(getNotes)
-    .then(dispatchStateChangeEvent)
+        .then(() => {
+            return getNotes()
+        })
+        .then(dispatchStateChangeEvent)
 }

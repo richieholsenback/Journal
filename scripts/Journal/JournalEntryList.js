@@ -4,13 +4,13 @@
  *    there are items in the collection exposed by the
  *    data provider component
  */
-import { useJournalEntries } from "./JournalDataProvider.js"
+import { useNotes } from "./JournalDataProvider.js"
 import { JournalEntryComponent } from "./JournalEntry.js"
 
 export const entryList = () => {
     const contentElement = document.querySelector(".entryLog")
 
-    const entries = useJournalEntries()
+    const entries = useNotes()
 
     contentElement.innerHTML += `
     <article>
