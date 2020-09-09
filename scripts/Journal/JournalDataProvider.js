@@ -1,36 +1,39 @@
-let notes = [];
+const journal = []
 
 const eventHub = document.querySelector(".container")
 
 const dispatchStateChangeEvent = () => {
-    const noteStateChangedEvent = new CustomEvent("noteStateChanged")
+    const journalStateChanged = (new CustomEvent("journalStateChanged"))
 
-    eventHub.dispatchEvent(noteStateChangedEvent)
+    eventHub.dispatchEvent(journalStateChanged)
 }
 
-export const getNotes = () => {
-    return fetch('http://localhost:8088/entries')
-        .then(response => response.json())
-        .then(parsedNotes => {
-            notes = parsedNotes
+export const getEntries = () => {
+    return fetch("http://localhost:8088") // Fetch from the API
+        .then(response => response.json())  // Parse as JSON
+        .then(entries => {
+            // What should happen when we finally have the array?
+            journal = entries
         })
-
 }
 
-export const useNotes = () => {
-    return notes.slice()
+
+export const useEntries = () => {
+    const sortedByDate = journal.sort(
+        (currentEntry, nextEntry) =>
+            Date.parse(currentEntry.date) - Date.parse(nextEntry.date)
+    )
+    return sortedByDate
 }
 
-export const saveNote = note => {
-    return fetch('http://localhost:8088/notes', {
+export const saveEntry = (newEntryObj) => {
+    fetch("http://localhost:8088", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "applications/json"
         },
-        body: JSON.stringify(note)
+        body: JSON.stringify(newEntryObj)
     })
-        .then(() => {
-            return getNotes()
-        })
-        .then(dispatchStateChangeEvent)
+    .then(getEntries)
+    .then(dispatchStateChangeEvent)
 }
