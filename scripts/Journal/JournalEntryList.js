@@ -8,7 +8,7 @@ eventHub.addEventListener("journalStateChanged", event => {
 })
 
 const render = arrayOfEntries => {
-    const entryLog = document.querySelector("#entryLog")
+    const entryLog = document.querySelector(".entryLog")
     let HTMLArray = arrayOfEntries.map(entry => JournalEntryComponent(entry))
     entryLog.innerHTML = HTMLArray.join("")
 }

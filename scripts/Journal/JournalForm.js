@@ -4,47 +4,47 @@ const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".submit")
 
 eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "submit") {
+    if (clickEvent.target.id === "submitEntry") {
+        const dateTarget = document.querySelector("#noteDate")
+        const conceptTarget = document.querySelector("#noteConcept")
+        const entryTarget = document.querySelector("#noteEntry")
+        const moodTarget = document.querySelector("#noteMood")
 
-        const contentTarget = document.querySelector(".journalEntryInput")
-        const entryMood = document.querySelector('#mood')
-    }
-    if (contentTarget[1].value.length < 20 && entryMood.value !== "0") {
-        const newJournalEntry = {
-            date: contentTarget[0].value,
-            concept: contentTarget[1].value,
-            entry: contentTarget[2].value,
-            mood: contentTarget[3].value
+
+        if (dateTarget.value !== 0 && conceptTarget.value !== 0 && entryTarget.value !== 0 && moodTarget.value !== 0) {
+            const newNote = {
+                date: dateTarget.value,
+                concept: conceptTarget.value,
+                entry: entryTarget.value,
+                mood: moodTarget.value
+            }
+            saveEntry(newNote)
+        } else {
+            window.alert("Fill out the form ya silly bitch!")
         }
-        saveEntry(newJournalEntry)
-        JournalForm()
-    } else if (contentTarget[1].value.length >= 20 && entryMood.value !== "0") {
-        alert("Concepts covered field must be less than 20 characters long.")
-    } else {
-        alert("Please select a mood for this entry.")
-    }
+}
 })
 
 export const JournalForm = () => {
-    const contentTarget = document.querySelector(".entryLog")
+    const contentTarget = document.querySelector(".journal-entry-form")
     contentTarget.innerHTML = `
     <h2>Daily Journal</h2>
     <form action="">
         <fieldset>
-            <label for="journalDate">Date of entry</label>
-            <input type="date" name="journalDate" id="journalDate" class="journalEntryInput">
+            <label for="journalDate" >Date of entry</label>
+            <input type="date" name="journalDate" id="noteDate" class="journalEntryInput">
         </fieldset>    
         <fieldset>
-            <label for="concepts">Concepts covered</label>
-            <input type="text" name="concepts" id="concepts" class="journalEntryInput">
+            <label for="concepts" >Concepts covered</label>
+            <input type="text" name="concepts" id="noteConcept" class="journalEntryInput">
         </fieldset>
         <fieldset>
-            <label for="journalEntry">Journal Entry</label>
-            <textarea class="journalEntryInput"></textarea>
+            <label for="journalEntry" >Journal Entry</label>
+            <textarea class="journalEntryInput" id="noteEntry"></textarea>
         </fieldset>
         <fieldset>
             <label for="mood">Mood for the day</label>
-            <select id="mood" class="journalEntryInput">
+            <select id="noteMood" class="journalEntryInput">
                 <option value="0">Please select a mood...</option>
                 <option value="Happy">Happy</option>
                 <option value="Ok">Ok</option>
