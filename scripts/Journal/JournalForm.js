@@ -1,4 +1,4 @@
-import {saveEntry} from './JournalDataProvider.js'
+import {getEntries, useEntries, saveEntry} from './JournalDataProvider.js'
 
 const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".submit")
@@ -11,17 +11,13 @@ eventHub.addEventListener("click", clickEvent => {
         const moodTarget = document.querySelector("#noteMood")
 
 
-        if (dateTarget.value !== 0 && conceptTarget.value !== 0 && entryTarget.value !== 0 && moodTarget.value !== 0) {
-            const newNote = {
+        const newNote = {
                 date: dateTarget.value,
                 concept: conceptTarget.value,
                 entry: entryTarget.value,
                 mood: moodTarget.value
             }
             saveEntry(newNote)
-        } else {
-            window.alert("Fill out the form ya silly bitch!")
-        }
 }
 })
 
@@ -45,10 +41,11 @@ export const JournalForm = () => {
         <fieldset>
             <label for="mood">Mood for the day</label>
             <select id="noteMood" class="journalEntryInput">
-                <option value="0">Please select a mood...</option>
-                <option value="Happy">Happy</option>
-                <option value="Ok">Ok</option>
-                <option value="Sad">Sad</option>
+            <option value="confident">confident</option>
+            <option value="prepared">prepared</option>
+            <option value="excited">excited</option>
+            <option value="stuck">stuck</option>
+            <option value="confused">totally confused</option>
             </select>    
         </fieldset>
         <button type="button" id="submitEntry">Record Journal Entry</button> 
