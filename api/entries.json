@@ -4,43 +4,78 @@
       "date": "2020-09-22",
       "concept": "Fixed issue",
       "entry": "FIXED THE JOURNAL IT WAS THE SMALLEST THING",
-      "mood": "confident",
+      "moodId": 2,
       "id": 1
     },
     {
       "date": "2020-09-21",
       "concept": "STRUGGLED WITH THE ISSUE",
       "entry": "FAAAHHHHKKKKKK",
-      "mood": "confused",
+      "moodId": 8,
       "id": 2
     },
     {
-      "date": "2020-09-19",
-      "concept": "Spent a lovely day with Caro",
-      "entry": "It was so nice",
-      "mood": "excited",
+      "date": "2020-09-22",
+      "concept": "This",
+      "entry": "Adn some of that!",
+      "moodId": 3,
       "id": 3
     },
     {
-      "date": "2020-09-18",
-      "concept": "Lab time",
-      "entry": "lovely and nice",
-      "mood": "prepared",
-      "id": 4
+      "date": "2020-09-08",
+      "concept": "bam",
+      "entry": "bop",
+      "moodId": 7,
+      "id": 1
     },
     {
-      "date": "2020-09-22",
-      "concept": "shrt",
-      "entry": "bdsfbdfs",
-      "mood": "confident",
-      "id": 5
-    },
-    {
-      "date": "2020-09-22",
-      "concept": "gadr",
-      "entry": "bdfsb",
-      "mood": "confident",
+      "date": "2020-09-04",
+      "concept": "cool",
+      "entry": "alright",
+      "moodId": 3,
       "id": 6
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "label": "Incredible"
+    },
+    {
+      "id": 2,
+      "label": "Feeling good"
+    },
+    {
+      "id": 3,
+      "label": "I'm doing alright"
+    },
+    {
+      "id": 4,
+      "label": "Meh"
+    },
+    {
+      "id": 5,
+      "label": "I'm a little confused"
+    },
+    {
+      "id": 6,
+      "label": "Completely lost"
+    },
+    {
+      "id": 7,
+      "label": "Pretty Annoyed"
+    },
+    {
+      "id": 8,
+      "label": "Frustrated"
+    },
+    {
+      "id": 9,
+      "label": "Angry"
+    },
+    {
+      "id": 10,
+      "label": "I want to kill"
     }
   ]
 }
