@@ -1,4 +1,5 @@
 import { getEntries, useEntries, saveEntry } from './JournalDataProvider.js'
+import { getMoods, useMoods } from './MoodProvider.js'
 
 const eventHub = document.querySelector("#container")
 
@@ -13,18 +14,14 @@ eventHub.addEventListener("click", clickEvent => {
             date: dateTarget.value,
             concept: conceptTarget.value,
             entry: entryTarget.value,
-            mood: moodTarget.value
+            moodId: parseInt(moodTarget.value)
         }
-        console.log(newNote.date)
-        console.log(newNote.concept)
-        console.log(newNote.entry)
-        console.log(newNote.mood)
+        
         saveEntry(newNote)
-        .then(JournalForm)
     } 
 })
 
-export const JournalForm = () => {
+export const JournalForm = (allMoods) => {
     const contentTarget = document.querySelector(".journal-entry-form")
     contentTarget.innerHTML = `
     <h2>Daily Journal</h2>
@@ -43,12 +40,12 @@ export const JournalForm = () => {
         </fieldset>
         <fieldset>
             <label for="mood">Mood for the day</label>
-            <select id="noteMood" class="journalEntryInput">
-            <option value="confident">confident</option>
-            <option value="prepared">prepared</option>
-            <option value="excited">excited</option>
-            <option value="stuck">stuck</option>
-            <option value="confused">totally confused</option>
+            <select class="dropdown" id="noteMood">
+                ${
+                    allMoods.map(mood => {
+                            return `<option id="mood--${ mood.id }" value="${ mood.id }">${ mood.label }</option>`
+                        }).join("")
+                }
             </select>    
         </fieldset>
         <button type="button" id="submitEntry">Record Journal Entry</button> 
@@ -57,8 +54,9 @@ export const JournalForm = () => {
 }
 
 export const EntryForm = () => {
-    getEntries()
-        .then(() => {
-            JournalForm(useEntries())
-        })
+    getMoods()
+        .then(() =>{
+        const allMoods = useMoods()
+        JournalForm(allMoods)
+    })
 }
