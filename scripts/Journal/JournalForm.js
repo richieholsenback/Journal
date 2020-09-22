@@ -24,7 +24,6 @@ eventHub.addEventListener("click", clickEvent => {
 export const JournalForm = (allMoods) => {
     const contentTarget = document.querySelector(".journal-entry-form")
     contentTarget.innerHTML = `
-    <h2>Daily Journal</h2>
     <form action="">
         <fieldset>
             <label for="journalDate" >Date of entry</label>
