@@ -19,5 +19,46 @@ fieldset {
 }
 
 body {
-    background-color: rgb(88, 103, 91);
+    background-color: rgb(103, 113, 105);
+}
+
+.entryLog {
+    
+}
+
+.journalEntry {
+border-bottom: solid black;
+padding: 0em 0em 1em 0em;
+}
+
+html {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 100;
+}
+
+.entryContent {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+#logo {
+    position: absolute;
+}
+
+header {
+    position: relative;
+    align-items: flex-start;
+    color: white;
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.floral-header {
+    opacity: 0.2;
 }
