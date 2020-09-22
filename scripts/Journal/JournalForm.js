@@ -9,18 +9,18 @@ eventHub.addEventListener("click", clickEvent => {
         const entryTarget = document.querySelector("#noteEntry")
         const moodTarget = document.querySelector("#noteMood")
 
-
         const newNote = {
             date: dateTarget.value,
             concept: conceptTarget.value,
             entry: entryTarget.value,
             mood: moodTarget.value
         }
-        // console.log(newNote.date)
-        // console.log(newNote.concept)
-        // console.log(newNote.entry)
-        // console.log(newNote.mood)
+        console.log(newNote.date)
+        console.log(newNote.concept)
+        console.log(newNote.entry)
+        console.log(newNote.mood)
         saveEntry(newNote)
+        .then(JournalForm)
     } 
 })
 
