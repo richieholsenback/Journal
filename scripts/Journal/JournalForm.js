@@ -1,7 +1,6 @@
-import {getEntries, useEntries, saveEntry} from './JournalDataProvider.js'
+import { getEntries, useEntries, saveEntry } from './JournalDataProvider.js'
 
-const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector(".submit")
+const eventHub = document.querySelector("#container")
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitEntry") {
@@ -12,13 +11,17 @@ eventHub.addEventListener("click", clickEvent => {
 
 
         const newNote = {
-                date: dateTarget.value,
-                concept: conceptTarget.value,
-                entry: entryTarget.value,
-                mood: moodTarget.value
-            }
-            saveEntry(newNote)
-}
+            date: dateTarget.value,
+            concept: conceptTarget.value,
+            entry: entryTarget.value,
+            mood: moodTarget.value
+        }
+        // console.log(newNote.date)
+        // console.log(newNote.concept)
+        // console.log(newNote.entry)
+        // console.log(newNote.mood)
+        saveEntry(newNote)
+    } 
 })
 
 export const JournalForm = () => {
@@ -53,8 +56,9 @@ export const JournalForm = () => {
 `
 }
 
-// export const EntryForm = () => {
-//     getEntries().then(() => {
-//         render(useEntries())
-//     })
-// }
+export const EntryForm = () => {
+    getEntries()
+        .then(() => {
+            JournalForm(useEntries())
+        })
+}

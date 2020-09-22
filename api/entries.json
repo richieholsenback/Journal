@@ -20,6 +20,9 @@
       "concept": "JS",
       "entry": "We worked on a group project and learned about array methods like .map, .join, .forEach.",
       "mood": "Good, tired"
+    },
+    {
+      "id": 4
     }
   ]
 }
