@@ -1,7 +1,6 @@
-import {saveEntry} from './JournalDataProvider.js'
+import { getEntries, useEntries, saveEntry } from './JournalDataProvider.js'
 
-const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector(".submit")
+const eventHub = document.querySelector("#container")
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitEntry") {
@@ -11,18 +10,18 @@ eventHub.addEventListener("click", clickEvent => {
         const moodTarget = document.querySelector("#noteMood")
 
 
-        if (dateTarget.value !== 0 && conceptTarget.value !== 0 && entryTarget.value !== 0 && moodTarget.value !== 0) {
-            const newNote = {
-                date: dateTarget.value,
-                concept: conceptTarget.value,
-                entry: entryTarget.value,
-                mood: moodTarget.value
-            }
-            saveEntry(newNote)
-        } else {
-            window.alert("Fill out the form ya silly bitch!")
+        const newNote = {
+            date: dateTarget.value,
+            concept: conceptTarget.value,
+            entry: entryTarget.value,
+            mood: moodTarget.value
         }
-}
+        // console.log(newNote.date)
+        // console.log(newNote.concept)
+        // console.log(newNote.entry)
+        // console.log(newNote.mood)
+        saveEntry(newNote)
+    } 
 })
 
 export const JournalForm = () => {
@@ -45,10 +44,11 @@ export const JournalForm = () => {
         <fieldset>
             <label for="mood">Mood for the day</label>
             <select id="noteMood" class="journalEntryInput">
-                <option value="0">Please select a mood...</option>
-                <option value="Happy">Happy</option>
-                <option value="Ok">Ok</option>
-                <option value="Sad">Sad</option>
+            <option value="confident">confident</option>
+            <option value="prepared">prepared</option>
+            <option value="excited">excited</option>
+            <option value="stuck">stuck</option>
+            <option value="confused">totally confused</option>
             </select>    
         </fieldset>
         <button type="button" id="submitEntry">Record Journal Entry</button> 
@@ -56,8 +56,9 @@ export const JournalForm = () => {
 `
 }
 
-// export const EntryForm = () => {
-//     getEntries().then(() => {
-//         render(useEntries())
-//     })
-// }
+export const EntryForm = () => {
+    getEntries()
+        .then(() => {
+            JournalForm(useEntries())
+        })
+}
