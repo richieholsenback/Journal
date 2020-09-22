@@ -4,7 +4,7 @@ import { JournalEntryComponent } from "./JournalEntry.js"
 const eventHub = document.querySelector("#container")
 
 eventHub.addEventListener("journalStateChanged", event => {
-    render(useEntries(event))
+    entryList()
 })
 
 const render = arrayOfEntries => {
@@ -15,7 +15,6 @@ const render = arrayOfEntries => {
 
 export const entryList = () => {
     getEntries()
-    .then(() => {
-        render(useEntries())
-    })
+    .then(useEntries)
+    .then(render)
 }
