@@ -34,12 +34,9 @@ export const saveEntry = (newEntryObj) => {
     fetch("http://localhost:8088/entries", {
         method: "POST",
         headers: {
-            "Content-Type": "applications/json"
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(newEntryObj)
-    })
-    .then(() => {
-        return getEntries
     })
     .then(dispatchStateChangeEvent)
 }
