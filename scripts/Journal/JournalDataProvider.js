@@ -40,3 +40,11 @@ export const saveEntry = (newEntryObj) => {
     })
     .then(dispatchStateChangeEvent)
 }
+
+
+export const deleteEntry = noteId => {
+    return fetch(`http://localhost:8088/entries/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getEntries)
+}

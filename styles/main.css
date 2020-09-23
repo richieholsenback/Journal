@@ -27,7 +27,7 @@ body {
 }
 
 .journalEntry {
-border-bottom: solid black;
+border-bottom: solid rgba(0, 0, 0, 0.388);
 padding: 0em 0em 1em 0em;
 }
 

@@ -1,41 +1,5 @@
 {
-  "entries": [
-    {
-      "date": "2020-09-22",
-      "concept": "Fixed issue",
-      "entry": "FIXED THE JOURNAL IT WAS THE SMALLEST THING",
-      "moodId": 2,
-      "id": 1
-    },
-    {
-      "date": "2020-09-21",
-      "concept": "STRUGGLED WITH THE ISSUE",
-      "entry": "FAAAHHHHKKKKKK",
-      "moodId": 8,
-      "id": 2
-    },
-    {
-      "date": "2020-09-22",
-      "concept": "This",
-      "entry": "Adn some of that!",
-      "moodId": 3,
-      "id": 3
-    },
-    {
-      "date": "2020-09-08",
-      "concept": "bam",
-      "entry": "bop",
-      "moodId": 7,
-      "id": 1
-    },
-    {
-      "date": "2020-09-04",
-      "concept": "cool",
-      "entry": "alright",
-      "moodId": 3,
-      "id": 6
-    }
-  ],
+  "entries": [],
   "moods": [
     {
       "id": 1,
